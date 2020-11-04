@@ -1,2 +1,2 @@
 # gentrig
- Two parameter power-law generalizations of the sine and cosine functions.
+ An implementation of two-parameter power-law based generalizations of the differential representation of trigonometric sine and cosine functions.
