@@ -5,6 +5,7 @@ This is a quick and dirty implementation of the two-parameter generalized trigon
 The autonomous system of two first order ordinary differential equations we are modeling:
 
 y' =  |x|^(p-1) sign(x), x(0) = x_0
+
 x' = -|y|^(q-1) sign(y), y(0) = y_0
 
 for '=d/dt, with phase portrait defined by
