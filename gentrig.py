@@ -25,7 +25,7 @@ autonomous system of two first-order differential equations
 
 for p,q > 1 and a,b > 0.
 
-    2para( p , q , initial_conditions , coef=None )
+    twopara( p , q , initial_conditions , coef=None )
 
     exponents:
 
@@ -108,7 +108,7 @@ and representation.
 
         This function defines the differential system (1).
 
-    para_func( tspan = None )
+    para_func( tspan = None, max_step = None, solver = None )
 
         This functions solves the differential system (1) using solve_ivp and
         returns the two parametrized functions x(t) and y(t) which can be
@@ -117,7 +117,11 @@ and representation.
         necessary in solve_ivp. If no value is given, the default value shall be
         one full period of the system as calculated by period().
 
-                tspan = USER_DEFINED    or      period()
+                                                    default:
+
+                tspan =     USER_DEFINED        or      period()
+                max_step =  USER_DEFINED        or      tspan / 100
+                solver =    USER_DEFINED        or      'RK45'
 
 
 ================================================================================
@@ -200,13 +204,15 @@ class twopara:
     #must reverse this order in solve_ivp because it indexes by the given
     #ordering of dy. It returns the solution set such that it respects the
     #traditional Cartesian ordering, i.e. - t, x(t), y(t)
-    def para_func(self, tspan = None, max_step = None):
+    def para_func(self, tspan = None, max_step = None, solver = None):
 
         tspan = tspan or self.period()
 
         max_step = max_step or tspan / 100
 
-        SOLUTION = solve_ivp(self.func, [0, tspan], [self.i_c[1], self.i_c[0]], max_step = max_step)
+        solver = solver or 'RK45'
+
+        SOLUTION = solve_ivp(self.func, [0, tspan], [self.i_c[1], self.i_c[0]], max_step = max_step, method = solver)
 
         return SOLUTION.t, SOLUTION.y[1], SOLUTION.y[0]
 
