@@ -10,12 +10,13 @@ x' = -|y|^(q-1) sign(y), y(0) = y_0
 
 for '=d/dt, with phase portrait defined by
 
-(1)        |x|^p / p + |y|^q / q = |x_0|^p / p + |y_0|^q / q
 
-and periodic solution expressions
+|x|^p / p + |y|^q / q = |x_0|^p / p + |y_0|^q / q
+
+which we refer as a generalized ellipse, and periodic solution expressions
 
 x(t) and y(t)
 
-The degenerate case of this expression when p = q = 2 is the linear first order system of two equations uniquely solved by sine and cosine whose phase portrait is the unit circle x^2 + y^2. These functions are periodic in their expression and their phase plane is defined by a set of generalized ellipses as given by (1) which form a minimal covering of the plane R^2.
+The degenerate case of this expression when p = q = 2 is the linear first order system of two equations uniquely solved by sine and cosine whose phase portrait is the unit circle x^2 + y^2. These functions are periodic in their expression and their phase plane is defined by a set of generalized ellipses which form a minimal covering of the plane R^2.
 
-In the future as this project progresses, I hope to implement more general expressions in these systems than simple power-law relations, and hopefully make their use and calculation more efficient. These fascinating little functions are fun to play with and explore how nonlinearities are expressed in their behavior. The current program is very simplistic. Suggestions are welcome, and come back periodically to see how it is progressing.
+In the future as this project progresses, I hope to implement more general expressions in these systems than simple power-law relations, and hopefully make their use and calculation more efficient. These fascinating little functions are fun to play with and explore how nonlinearities are expressed in their behavior. The current program is very simplistic. Suggestions are welcome. Come back periodically to see how it is progressing.
